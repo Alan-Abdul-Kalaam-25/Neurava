@@ -1,0 +1,21 @@
+{
+  "name": "neureva",
+  "version": "1.0.0",
+  "description": "Neureva - The Ultimate platform to heal all of your Neural Disorders in the most easy and fun way.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "neureva",
+    "adhd",
+    "autism",
+    "neuro-disorders"
+  ],
+  "author": "Code Square",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

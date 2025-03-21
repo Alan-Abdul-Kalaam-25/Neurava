@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Neurava</title>
+  <!-- MDB icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- Google Fonts Roboto -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bebas+Neue&family=Lora&family=Major+Mono+Display&family=Righteous&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lora&family=Major+Mono+Display&family=Righteous&display=swap"
+    rel="stylesheet">
+  <!-- MDB -->
+
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --text-color: #333;
+      --light-bg: #f8f9fa;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      font-family: 'Roboto', sans-serif;
+      transition: all var(--transition-speed) ease-in-out;
+    }
+
+    body {
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--secondary-color) !important;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width var(--transition-speed);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Button Styling */
+    .btn {
+      border-radius: 25px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #357abd;
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .btn-warning {
+      background-color: #ffc107;
+      border: none;
+      color: #000;
+    }
+
+    .btn-warning:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+      color: #000;
+    }
+
+    /* Card Styling */
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform var(--transition-speed);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* Carousel Styling */
+    #introCarousel {
+      margin-top: 0;
+    }
+
+    .carousel-item {
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-item .mask {
+      background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    }
+
+    .carousel-caption {
+      bottom: 20%;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: var(--secondary-color);
+      text-align: center;
+    }
+
+    /* Image Hover Effects */
+    .bg-image {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .bg-image img {
+      transition: transform var(--transition-speed);
+    }
+
+    .bg-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Footer Styling */
+    footer {
+      background: linear-gradient(to right, #1a1a1a, #2c3e50);
+    }
+
+    footer h4, footer h5 {
+      color: #fff;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    footer h4::after, footer h5::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary-color);
+    }
+
+    .social-links a {
+      color: #fff;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-links a:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    .hover-white {
+      transition: all 0.3s ease;
+    }
+
+    .hover-white:hover {
+      color: #fff !important;
+      padding-left: 5px;
+    }
+
+    .input-group .form-control:focus {
+      box-shadow: none;
+      border-color: var(--primary-color);
+    }
+
+    .input-group .btn {
+      border-radius: 0 25px 25px 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .carousel-item {
+        height: 50vh;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .card {
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* Form Styling */
+    .form-control {
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #eee;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: none;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: darken(var(--primary-color), 10%);
+    }
+
+    /* Navbar Dropdown Styling */
+    .dropdown-menu {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      min-width: 200px;
+      z-index: 1000;
+    }
+
+    .dropdown-item {
+      padding: 0.8rem 1.5rem;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .dropdown-toggle::after {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* Ensure dropdown is visible on hover */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Fix dropdown positioning */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    /* Remove underline from donate button */
+    .nav-link .btn-warning {
+      text-decoration: none !important;
+    }
+
+    .nav-link .btn-warning:hover {
+      text-decoration: none !important;
+    }
+
+    /* Override the nav-link hover effect for donate button */
+    .nav-link .btn-warning::after {
+      display: none;
+    }
+
+    /* Remove underline from all donate buttons */
+    a .btn-warning {
+      text-decoration: none !important;
+    }
+
+    a .btn-warning:hover {
+      text-decoration: none !important;
+    }
+
+    /* Override any hover effects for donate buttons */
+    a .btn-warning::after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <strong>Neurava</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/resources">Resource</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                Mental Skills
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/gamepage">Memory Games</a></li>
+                <li><a class="dropdown-item" href="/mental-tasks">Focus Exercises</a></li>
+                <li><a class="dropdown-item" href="/games/tic-tac-toe">Tic Tac Toe</a></li>
+                <li><a class="dropdown-item" href="/games/paint">Drawing Game</a></li>
+                <li><a class="dropdown-item" href="/games/simon">Simon Game</a></li>
+                <li><a class="dropdown-item" href="/games/puzzle">Puzzle Game</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/community">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/test">Test</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3">
+              <a class="nav-link" href="/donate">
+                <button type="button" class="btn btn-warning">Donate</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signin">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel wrapper -->
+    <div id="introCarousel" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+      </ol>
+
+      <!-- Inner -->
+      <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active" style="background-image: url('img/helping-hand-concept-gesture-sign-help-hope-two-hands-taking-each-other_158483-1765.avif');">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="display-4 mb-4">Meditation can go a long way..</h1>
+                <h5 class="mb-4">Hear from the top experts</h5>
+                <a class="btn btn-outline-light btn-lg" href="/learnTwo">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item" style="background-image: url('img/gettyimages-1313659027.webp');">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="display-4 mb-4">What is the difference between ADD and ADHD?</h1>
+                <h5 class="mb-4">Explore Our extensive library</h5>
+                <a class="btn btn-warning btn-lg" href="/learnOne">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item" style="background-image: url('img/images.jpg');">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="display-4 mb-4">"Not all scars can be seen"</h1>
+                <h5 class="mb-4">Explore Mental health of your child</h5>
+                <a class="btn btn-outline-light btn-lg" href="/resources">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!-- About Section -->
+      <section>
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4">
+            <div class="bg-image hover-overlay">
+              <img src="img/helping-hand-concept-gesture-sign-help-hope-two-hands-taking-each-other_158483-1765.avif"
+                class="img-fluid rounded-3" />
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="section-title">About Neurava</h2>
+            <p class="lead">
+              Our platform is dedicated to transforming the lives of children and families struggling with mental health
+              and learning disorders by giving them the help they need to thrive.
+            </p>
+            <p>
+              We're the leading independent nonprofit in children's mental health, operating three Mission Areas that
+              work together for greater impact: Care, Education and Science.
+            </p>
+            <p class="mt-4">
+              <strong>Our Mission:</strong> We aim at sharpening mental skills of children through various games which help them learn
+              patterns, sentences and develop higher order thinking skills with an interactive platform.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parents Role Section -->
+      <section class="bg-light rounded-4 p-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4">
+            <div class="bg-image hover-overlay">
+              <img src="img/gettyimages-1313659027.webp" class="img-fluid rounded-3" />
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="section-title">Parent's Role</h2>
+            <p class="lead">
+              Parents play an important role in the mental health development of their child.
+            </p>
+            <p>
+              Build a positive and supportive relationship with your child: A positive and supportive relationship can help them feel safe, secure, and loved. This can build their self-esteem and resilience, and help them develop healthy coping skills.
+            </p>
+            <a class="btn btn-primary mt-3" href="/resources">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section>
+        <h2 class="section-title">Explore Care</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="bg-image hover-overlay">
+                <img src="img/images.jpg" class="card-img-top" />
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">ADHD & Social Struggles</h5>
+                <p class="card-text">
+                  Children with ADHD can face challenges with social skills. They may find it challenging to make and keep friends because of their brain's executive functioning impairment.
+                </p>
+                <a href="/mental-tasks" class="btn btn-primary">Be Neurava for your child❤️</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="bg-image hover-overlay">
+                <img src="img/video game procon final.webp" class="card-img-top" />
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Mental Skills Development</h5>
+                <p class="card-text">
+                  Pattern learning games enhance cognitive skills such as memory, attention, problem-solving, and reasoning.
+                </p>
+                <a href="/gamepage" class="btn btn-primary">Fun way to learn💡🕹️</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="bg-image hover-overlay">
+                <img src="img/feature-image-red.png" class="card-img-top" />
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Meditation Guide</h5>
+                <p class="card-text">
+                  Meditation helps children reduce stress and anxiety by calming the mind and promoting relaxation.
+                </p>
+                <a href="/meditation" class="btn btn-primary">For u & your Mind🧘</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Review Section -->
+      <section class="bg-light rounded-4 p-5">
+        <h2 class="section-title">Share Your Experience</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form action="/submit-review" method="POST" class="p-5 bg-white rounded-4 shadow-lg">
+              <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input type="text" id="form3Example1" class="form-control border-0 border-bottom" placeholder="First name" />
+                    <label for="form3Example1" class="text-muted">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input type="text" id="form3Example2" class="form-control border-0 border-bottom" placeholder="Last name" />
+                    <label for="form3Example2" class="text-muted">Last name</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-floating mb-4">
+                <textarea class="form-control border-0 border-bottom" id="form3Example3" style="height: 120px" placeholder="Your review"></textarea>
+                <label for="form3Example3" class="text-muted">Your review</label>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3">
+                  <i class="fas fa-paper-plane me-2"></i>Submit Review
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!--Footer-->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- About Column -->
+        <div class="col-lg-4 mb-4">
+          <h4 class="mb-4">About Neurava</h4>
+          <p class="text-muted">
+            We're dedicated to transforming lives through mental health support and education. Join us in making a difference.
+          </p>
+          <div class="social-links mt-4">
+            <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" target="_blank" class="me-3">
+              <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a href="https://github.com/mdbootstrap/mdb-ui-kit" target="_blank" class="me-3">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="#" class="me-3">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="#" class="me-3">
+              <i class="fab fa-twitter fa-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/resources" class="text-muted text-decoration-none hover-white">Resources</a></li>
+            <li class="mb-2"><a href="/gamepage" class="text-muted text-decoration-none hover-white">Mental Games</a></li>
+            <li class="mb-2"><a href="/mental-tasks" class="text-muted text-decoration-none hover-white">Mental Tasks</a></li>
+            <li class="mb-2"><a href="/meditation" class="text-muted text-decoration-none hover-white">Meditation</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="mb-4">Support</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/help" class="text-muted text-decoration-none hover-white">Help Center</a></li>
+            <li class="mb-2"><a href="/contact" class="text-muted text-decoration-none hover-white">Contact Us</a></li>
+            <li class="mb-2"><a href="/about" class="text-muted text-decoration-none hover-white">About Us</a></li>
+            <li class="mb-2"><a href="/community" class="text-muted text-decoration-none hover-white">Community</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Column -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="mb-4">Legal</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/privacy" class="text-muted text-decoration-none hover-white">Privacy Policy</a></li>
+            <li class="mb-2"><a href="/terms" class="text-muted text-decoration-none hover-white">Terms of Service</a></li>
+            <li class="mb-2"><a href="/donate" class="text-muted text-decoration-none hover-white">Donate</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="mb-4">Newsletter</h5>
+          <p class="text-muted small">Subscribe to our newsletter for updates and news.</p>
+          <form class="mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Your email">
+              <button class="btn btn-primary btn-sm" type="submit">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <hr class="my-4 border-secondary">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0 text-muted small">&copy; 2024 Neurava. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="social-links">
+            <a href="#" class="text-muted me-3 small">Cookie Policy</a>
+            <a href="#" class="text-muted me-3 small">GDPR</a>
+            <a href="#" class="text-muted small">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Darkmode.js/1.4.0/darkmode-js.min.js"></script>
+  <script src="https://kit.fontawesome.com/2e853aa989.js"></script>
+</body>
+
+</html>
