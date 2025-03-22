@@ -14,60 +14,69 @@ app.use(express.json()); // Add this to handle JSON requests
 
 // Home route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 // Resource routes
 app.get("/resources", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/resource.html"));
+  res.sendFile(path.join(__dirname, "/public/resource.html"));
 });
 
 // Mental Skills routes
 app.get("/gamepage", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/gamePage.html"));
+  res.sendFile(path.join(__dirname, "/public/gamePage.html"));
 });
 
 app.get("/mental-tasks", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/Motivational Videos/Motivational.html"));
+  res.sendFile(
+    path.join(__dirname, "/public/Motivational Videos/Motivational.html")
+  );
 });
 
 // Community route
 app.get("/community", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/community.html"));
+  res.sendFile(path.join(__dirname, "/public/community.html"));
 });
 
 // Test route
 app.get("/test", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/test/test.html"));
+  res.sendFile(path.join(__dirname, "/public/test/test.html"));
 });
 
 // Donate route
 app.get("/donate", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/Donate/donate.html"));
+  res.sendFile(path.join(__dirname, "/public/Donate/donate.html"));
 });
 
 // Sign in route
 app.get("/signin", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/signin.html"));
+  res.sendFile(path.join(__dirname, "/public/signin.html"));
 });
 
 // Learning routes
 app.get("/learnOne", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/adpitor-html/index.html"));
+  res.sendFile(path.join(__dirname, "/public/adpitor-html/index.html"));
 });
 
 app.get("/learnTwo", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/Meditation/Meditation.html"));
+  res.sendFile(path.join(__dirname, "/public/Meditation/Meditation.html"));
 });
 
 // Meditation route
 app.get("/meditation", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/Meditation/Meditation/Meditation.html"));
+  res.sendFile(
+    path.join(__dirname, "/public/Meditation/Meditation/Meditation.html")
+  );
 });
 
 // Motivational videos route
 app.get("/motivational", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/Motivational Videos/Motivational Videos/Motivational.html"));
+  res.sendFile(
+    path.join(
+      __dirname,
+      "/public/Motivational Videos/Motivational Videos/Motivational.html"
+    )
+  );
 });
 
 // Game routes
@@ -84,7 +93,12 @@ app.get("/games/simon", (req, res) => {
 });
 
 app.get("/games/pattern", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/game-hackathon/game-law/frontEnd/SEEKHO/Game page.html"));
+  res.sendFile(
+    path.join(
+      __dirname,
+      "public/game-hackathon/game-law/frontEnd/SEEKHO/Game page.html"
+    )
+  );
 });
 
 app.get("/games/puzzle", (req, res) => {
@@ -94,7 +108,12 @@ app.get("/games/puzzle", (req, res) => {
 // Motivational video navigation routes
 app.get("/motivational-videos/:id", (req, res) => {
   const videoId = req.params.id;
-  res.sendFile(path.join(__dirname, `public/Motivational Videos/Motivational${videoId}.html`));
+  res.sendFile(
+    path.join(
+      __dirname,
+      `public/Motivational Videos/Motivational${videoId}.html`
+    )
+  );
 });
 
 // Footer routes
@@ -127,7 +146,7 @@ app.post("/submit-review", (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send("Something broke!");
 });
 
 // Function to start server
@@ -137,17 +156,17 @@ const startServer = (portNumber) => {
       console.log(`Server is running on http://localhost:${portNumber}`);
     });
 
-    server.on('error', (err) => {
-      if (err.code === 'EADDRINUSE') {
+    server.on("error", (err) => {
+      if (err.code === "EADDRINUSE") {
         console.log(`Port ${portNumber} is busy, trying ${portNumber + 1}`);
         server.close();
         startServer(portNumber + 1);
       } else {
-        console.error('Server error:', err);
+        console.error("Server error:", err);
       }
     });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 };
