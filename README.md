@@ -1,1 +1,1 @@
-# Neureva - The Ultimate platform to heal all of your Neural Disorders in the most easy and fun way.
+# Neurava - Unlocking Potential for Children with ADHD
