@@ -1,0 +1,150 @@
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  --primary-color: #4a90e2;
+  --secondary-color: #e0e0e0;
+  --accent-color: #e74c3c;
+  --text-color: #e0e0e0;
+  --light-bg: #1a1a1a;
+  --dark-bg: #2d2d2d;
+  --card-bg: #333333;
+  --border-color: #404040;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(45, 45, 45, 0.95) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .nav-link {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-text {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: var(--card-bg);
+  border-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #888;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #888 !important;
+}
+
+[data-theme="dark"] .border-secondary {
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .btn-outline-light {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .bg-image .mask {
+  background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+}
+
+[data-theme="dark"] .game-box {
+  background: rgba(51, 51, 51, 0.8);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .game-box:hover {
+  background: rgba(51, 51, 51, 0.9);
+  border-color: var(--primary-color);
+}
+
+[data-theme="dark"] footer {
+  background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+}
+
+[data-theme="dark"] .section-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .lead {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.5) !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--primary-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+} 

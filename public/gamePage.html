@@ -23,6 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lora&family=Major+Mono+Display&family=Righteous&display=swap" rel="stylesheet">
   <!-- MDB -->
   <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" href="/css/accessibility.css">
+  <link rel="stylesheet" href="/css/darkmode.css">
   <style>
     :root {
       --primary-color: #4a90e2;
@@ -30,6 +32,9 @@
       --accent-color: #e74c3c;
       --text-color: #333;
       --light-bg: #f8f9fa;
+      --dark-bg: #ffffff;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
       --transition-speed: 0.3s;
     }
 
@@ -196,6 +201,49 @@
         margin-bottom: 2rem;
       }
     }
+
+    .game-box {
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .game-box:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .game-box i {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .game-box h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .game-box p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.85rem;
+      margin: 8px 0 0;
+    }
   </style>
 </head>
 
@@ -225,8 +273,12 @@
                 Mental Skills
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/gamepage">Mental Games</a></li>
-                <li><a class="dropdown-item" href="/mental-tasks">Mental Tasks</a></li>
+                <li><a class="dropdown-item" href="/gamepage">Memory Games</a></li>
+                <li><a class="dropdown-item" href="/mental-tasks">Focus Exercises</a></li>
+                <li><a class="dropdown-item" href="/games/tic-tac-toe">Tic Tac Toe</a></li>
+                <li><a class="dropdown-item" href="/games/paint">Drawing Game</a></li>
+                <li><a class="dropdown-item" href="/games/simon">Simon Game</a></li>
+                <li><a class="dropdown-item" href="/games/puzzle">Puzzle Game</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -383,6 +435,8 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Darkmode.js/1.4.0/darkmode-js.min.js"></script>
   <script src="https://kit.fontawesome.com/2e853aa989.js"></script>
+  <script src="/js/accessibility.js"></script>
+  <script src="/js/theme.js"></script>
 </body>
 
 </html>

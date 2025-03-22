@@ -1,0 +1,161 @@
+/* Accessibility Panel Styles */
+.accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+    display: block !important;
+}
+
+.accessibility-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+    transform: scale(1.1);
+    background-color: #357abd;
+}
+
+.accessibility-options {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: none;
+    min-width: 200px;
+    z-index: 99998;
+}
+
+.accessibility-panel.active .accessibility-options {
+    display: block;
+}
+
+.accessibility-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.accessibility-option:hover {
+    background-color: #f0f0f0;
+}
+
+.accessibility-option.active {
+    background-color: #e3f2fd;
+    color: #4a90e2;
+}
+
+.accessibility-option i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Accessibility Features */
+.hide-images img {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.hide-images [style*="background-image"] {
+    background-image: none !important;
+    background-color: #f0f0f0 !important;
+}
+
+/* Maintain image container dimensions */
+.hide-images .bg-image,
+.hide-images .card-img-top,
+.hide-images .img-fluid,
+.hide-images .carousel-item {
+    position: relative !important;
+    min-height: 200px !important;
+    background-color: #f0f0f0 !important;
+}
+
+/* Specific adjustments for different image containers */
+.hide-images .carousel-item {
+    min-height: 70vh !important;
+}
+
+.hide-images .card-img-top {
+    min-height: 200px !important;
+}
+
+.hide-images .bg-image {
+    min-height: 300px !important;
+}
+
+.hide-images .img-fluid {
+    min-height: 200px !important;
+}
+
+/* Maintain aspect ratio for responsive images */
+.hide-images .img-fluid {
+    aspect-ratio: 16/9 !important;
+}
+
+.large-text {
+    font-size: 1.5em !important;
+}
+
+.large-text h1, .large-text h2, .large-text h3, .large-text h4, .large-text h5, .large-text h6 {
+    font-size: 1.5em !important;
+}
+
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.high-contrast a {
+    color: #ffff00 !important;
+}
+
+.high-contrast button {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.high-contrast input, .high-contrast textarea {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+} 

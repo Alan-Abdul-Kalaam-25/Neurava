@@ -14,16 +14,16 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="/Meditation/bootstrap.min.css">
       <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="/Meditation/style.css">
       <!-- Responsive-->
-      <link rel="stylesheet" href="responsive.css">
+      <link rel="stylesheet" href="/Meditation/responsive.css">
       <!-- fevicon -->
-  <link rel="icon" type="image/x-icon" href="android-chrome-192x192.png">
+      <link rel="icon" type="image/x-icon" href="/Meditation/android-chrome-192x192.png">
       
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="/Meditation/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!-- fonts -->
@@ -32,6 +32,192 @@
       <link rel="stylesheet" href="owl.carousel.min.css">
       <link rel="stylesheet" href="owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="stylesheet" href="/css/accessibility.css">
+      <style>
+        /* Enhanced Animations */
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+          from { 
+            transform: translateY(100px); 
+            opacity: 0; 
+          }
+          to { 
+            transform: translateY(0); 
+            opacity: 1; 
+          }
+        }
+
+        @keyframes slideInLeft {
+          from { 
+            transform: translateX(-100px); 
+            opacity: 0; 
+          }
+          to { 
+            transform: translateX(0); 
+            opacity: 1; 
+          }
+        }
+
+        @keyframes slideInRight {
+          from { 
+            transform: translateX(100px); 
+            opacity: 0; 
+          }
+          to { 
+            transform: translateX(0); 
+            opacity: 1; 
+          }
+        }
+
+        @keyframes scaleIn {
+          from { 
+            transform: scale(0.8); 
+            opacity: 0; 
+          }
+          to { 
+            transform: scale(1); 
+            opacity: 1; 
+          }
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+        }
+
+        /* Apply animations to elements */
+        .navbar {
+          animation: slideDown 0.8s ease-out;
+        }
+
+        .about_section {
+          animation: fadeIn 1.2s ease-out;
+        }
+
+        .about_taital_main {
+          animation: slideInRight 1s ease-out;
+        }
+
+        .about_img {
+          animation: slideInLeft 1s ease-out;
+        }
+
+        .marriage_section {
+          animation: slideUp 1.2s ease-out;
+        }
+
+        .marriage_taital_main {
+          animation: fadeIn 1s ease-out;
+        }
+
+        .blog_section {
+          animation: scaleIn 1s ease-out;
+        }
+
+        .blog_section_2 {
+          animation: slideUp 1s ease-out;
+          animation-fill-mode: both;
+        }
+
+        .blog_section_2:nth-child(1) { animation-delay: 0.2s; }
+        .blog_section_2:nth-child(2) { animation-delay: 0.4s; }
+        .blog_section_2:nth-child(3) { animation-delay: 0.6s; }
+        .blog_section_2:nth-child(4) { animation-delay: 0.8s; }
+
+        .contact_srction {
+          animation: scaleIn 1.2s ease-out;
+        }
+
+        .card {
+          transition: all 0.5s ease;
+          animation: fadeIn 1s ease-out;
+        }
+
+        .card:hover {
+          transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .image_1, .image_2, .image_3, .image_4, .image_5 {
+          transition: all 0.5s ease;
+        }
+
+        .image_1:hover, .image_2:hover, .image_3:hover, .image_4:hover, .image_5:hover {
+          transform: scale(1.1) rotate(2deg);
+        }
+
+        .read_bt a, .send_bt a {
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .read_bt a:hover, .send_bt a:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .read_bt a:after, .send_bt a:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: #000;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.4s ease;
+        }
+
+        .read_bt a:hover:after, .send_bt a:hover:after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Add animation to news section */
+        .news_section {
+          animation: slideUp 1.2s ease-out;
+        }
+
+        .news_taital {
+          animation: slideInRight 0.8s ease-out;
+        }
+
+        .news_section_2 {
+          animation: fadeIn 1s ease-out;
+        }
+
+        /* Add animation to footer */
+        .foot_ad {
+          animation: slideUp 0.8s ease-out;
+        }
+
+        /* Add animation to carousel items */
+        .carousel-item {
+          transition: all 0.6s ease-in-out;
+        }
+
+        .carousel-item.active {
+          animation: scaleIn 0.8s ease-out;
+        }
+
+        /* Add animation to testimonials */
+        .test_box {
+          animation: float 3s ease-in-out infinite;
+        }
+      </style>
    </head>
    <body>
  
@@ -58,9 +244,9 @@
             <div class="row">
                <div class="col-lg-6 padding_0">
                   <div class="abiut_images_main">
-                     <div><img src="meditation2.png" class="image_1"></div>
-                     <div><img src="yoga 2.png" class="image_2" style="width: 50%;"></div>
-                     <div class="main"><img src="yoga 3.png" class="image_3" style="position: relative; top: -150px; width: 60%; right: 20px;"></div>
+                     <div><img src="/Meditation/meditation2.png" class="image_1"></div>
+                     <div><img src="/Meditation/yoga 2.png" class="image_2" style="width: 50%;"></div>
+                     <div class="main"><img src="/Meditation/yoga 3.png" class="image_3" style="position: relative; top: -150px; width: 60%; right: 20px;"></div>
                   </div>
                </div>
                <div class="col-lg-6 padding_0">
@@ -79,7 +265,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="col-lg-6 padding_left_0">
-                  <div class="marriage_img"><img src="yoga.png" style="margin-left: 130px; margin-top: 40px;"></div>
+                  <div class="marriage_img"><img src="/Meditation/yoga.png" style="margin-left: 130px; margin-top: 40px;"></div>
                </div>
                <div class="col-lg-6">
                   <div class="marriage_taital_main">
@@ -88,7 +274,7 @@
                      <div class="marriage_section_2">
                         <div class="marriage_taital_left">
                            <div class="car_box">
-                              <img src="exercise.png" class="car_image">
+                              <img src="/Meditation/exercise.png" class="car_image">
                            </div>
                         </div>
                         <div class="marriage_taital_right">
@@ -100,7 +286,7 @@
                      <div class="marriage_section_2">
                         <div class="marriage_taital_left">
                            <div class="car_box">
-                              <img src="stress.png" class="car_image">
+                              <img src="/Meditation/stress.png" class="car_image">
                            </div>
                         </div>
                         <div class="marriage_taital_right">
@@ -111,7 +297,7 @@
                      <div class="marriage_section_2">
                         <div class="marriage_taital_left">
                            <div class="car_box">
-                              <img src="happy.png" class="car_image">
+                              <img src="/Meditation/happy.png" class="car_image">
                            </div>
                         </div>
                         <div class="marriage_taital_right">
@@ -133,7 +319,7 @@
             <div class="blog_section_2">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="image_4"><img src="full-shot-kid-meditating-grass_1668001775077_1668001784319_1668001784319.jpg" style="margin-top: 120px; border-radius: 5px;"></div>
+                     <div class="image_4"><img src="/Meditation/full-shot-kid-meditating-grass_1668001775077_1668001784319_1668001784319.jpg" style="margin-top: 120px; border-radius: 5px;"></div>
                   </div>
                   <div class="col-md-6">
                      <h3 class="liya_text">Pranayama</h3>
@@ -150,14 +336,14 @@
                      </div>
                   </div>
                   <div class="col-md-6">
-                     <div class="image_5"><img src="hd-hy-children.jpg" style="margin-top: 40px; border-radius: 5px;"></div>
+                     <div class="image_5"><img src="/Meditation/hd-hy-children.jpg" style="margin-top: 40px; border-radius: 5px;"></div>
                   </div>
                </div>
             </div>
             <div class="blog_section_2">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="image_4"><img src="Kinderyoga_downdog.jpg" style="margin-top: 110px; border-radius: 5px;"></div>
+                     <div class="image_4"><img src="/Meditation/Kinderyoga_downdog.jpg" style="margin-top: 110px; border-radius: 5px;"></div>
                   </div>
                   <div class="col-md-6">
                      <h3 class="liya_text">Ashtanga Yoga</h3>
@@ -174,7 +360,7 @@
                      </div>
                   </div>
                   <div class="col-md-6">
-                     <div class="image_5"><img src="1626099410-20090825chi0019-e-1.avif" style="margin-top: 10px; border-radius: 5px;"></div>
+                     <div class="image_5"><img src="/Meditation/1626099410-20090825chi0019-e-1.avif" style="margin-top: 10px; border-radius: 5px;"></div>
                   </div>
                </div>
             </div>
@@ -191,7 +377,7 @@
                      <div class="row">
                        <div class="col-md-4">
                          <div class="card" style="box-shadow: 5px 5px 4px 5px #888888;">
-                           <img class="card-img-top"  src="doctor-round-avatar-medicine-flat-avatar-with-male-doctor-medical-clinic-team-round-icon-medical-collection-illustration-vector.jpg" alt="Card image cap">
+                           <img class="card-img-top"  src="/Meditation/doctor-round-avatar-medicine-flat-avatar-with-male-doctor-medical-clinic-team-round-icon-medical-collection-illustration-vector.jpg" alt="Card image cap">
                            <div class="card-body">
                              <h5 class="card-title" style="font-size: 20px;">Dr. Sachin Arora</h5>
                              <p class="card-text">MBBS, MD - Psychiatry<br> 15yrs of Experience<br>Dwarka,<br><b>Delhi</b></b>.</p>
@@ -200,7 +386,7 @@
                        </div>
                        <div class="col-md-4">
                          <div class="card" style="box-shadow: 5px 5px 4px 5px #888888;">
-                           <img class="card-img-top" src="360_F_134293169_ymHT6Lufl0i94WzyE0NNMyDkiMCH9HWx.jpg" alt="Card image cap">
+                           <img class="card-img-top" src="/Meditation/360_F_134293169_ymHT6Lufl0i94WzyE0NNMyDkiMCH9HWx.jpg" alt="Card image cap">
                            <div class="card-body">
                              <h5 class="card-title" style="font-size: 20px;">Dr. Manish Jain</h5>
                              <p class="card-text">MBBS, MD - Psychiatry<br> 23yrs of Experience<br>Janakpuri,<br><b>Delhi</b></b></p>
@@ -209,7 +395,7 @@
                        </div>
                        <div class="col-md-4">
                          <div class="card" style="box-shadow: 5px 5px 4px 5px #888888;">
-                           <img class="card-img-top" src="young-friendly-toothy-smiling-doctor-uniform-stethoscope-avatar-design-medical-specialist-practitioner-therapist-surgeon-207556825.jpg" alt="Card image cap">
+                           <img class="card-img-top" src="/Meditation/young-friendly-toothy-smiling-doctor-uniform-stethoscope-avatar-design-medical-specialist-practitioner-therapist-surgeon-207556825.jpg" alt="Card image cap">
                            <div class="card-body">
                              <h5 class="card-title" style="font-size: 20px;">Dr. Vishal Sharma</h5>
                              <p class="card-text">MBBS, MD - Psychiatry<br> 32yrs of Experience<br>Patel Nagar,<br><b>Delhi</b></b></p>
@@ -235,12 +421,12 @@
                      <div class="news_section_2">
                         <h3 class="lina_text">Dr. Vishal Chhabra</h3>
                         <p class="dummy_text"> I understand the significant impact that meditation can have on the well-being of children with disabilities. Meditation is a powerful tool that can help children with mental health challenges to develop increased focus, emotional regulation, and self-awareness. As a mental health specialist, I believe that meditation is an important tool for children with mental disabilities to enhance their brain power and improve their quality of life.</p>
-                        <div class="quick_icon"><img src="quick-icon.png"></div>
+                        <div class="quick_icon"><img src="/Meditation/quick-icon.png"></div>
                      </div>
                   </div>
                </div>
                <div class="col-sm-4 padding_right_0">
-                  <div class="news_img"><img src="IMG-2680.jpeg" height="120%"></div>
+                  <div class="news_img"><img src="/Meditation/IMG-2680.jpeg" height="120%"></div>
                </div>
             </div>
          </div>
@@ -263,14 +449,12 @@
    </ul>
  </div>
       <!-- Javascript files-->
-      <script src="jquery.min.js"></script>
-      <script src="popper.min.js"></script>
-      <script src="bootstrap.bundle.min.js"></script>
-      <script src="jquery-3.0.0.min.js"></script>
-      <script src="plugin.js"></script>
-      <!-- sidebar -->
-      <script src="jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="custom.js"></script>
+      <script src="/Meditation/jquery.min.js"></script>
+      <script src="/Meditation/popper.min.js"></script>
+      <script src="/Meditation/bootstrap.min.js"></script>
+      <script src="/Meditation/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/Meditation/custom.js"></script>
+      <script src="/js/accessibility.js"></script>
       <!-- javascript --> 
       <script src="owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
